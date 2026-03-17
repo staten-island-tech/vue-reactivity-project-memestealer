@@ -10,8 +10,8 @@ const router = createRouter({
       component: Banner,
     },
     {
-     path: '/vue-lists',
-    name: 'vue-lists',
+     path: '/nypd',
+    name: 'nypd',
     component: VueLists,
     },
   ],

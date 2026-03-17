@@ -1,20 +1,35 @@
 <template>
-
-<h1>The Window Object</h1>
-<h2>The localStorage Property</h2>
-
-<p>Saved name is:</p>
-<p id="demo"></p>
-
+  <div class="container">
+    <NYPD v-for="(crime, index) in arrests" :key="crime.ofns_desc" :arrests="crime" :id="index" />
+  </div>
 </template>
 
 <script setup>
-// Set Item
-localStorage.setItem("lastname", "Smith");
-// Retrieve
-document.getElementById("demo").innerHTML = localStorage.getItem("lastname");
+import { ref, onMounted } from 'vue'
+import NYPD from '@/components/nypd.vue'
+const arrests = ref([])
+async function getArrests() {
+  try {
+    const response = await fetch('https://data.cityofnewyork.us/resource/uip8-fykc.json')
+    const data = await response.json()
+    arrests.value = data
+  } catch (error) {
+    console.log(error)
+  }
+}
+onMounted(() => {
+  getArrests()
+})
 </script>
 
 <style scoped>
-
+.container {
+  width: 80vw;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
 </style>
