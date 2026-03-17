@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <NYPD v-for="(crime, index) in arrests" :key="crime.ofns_desc" :arrests="crime" :id="index" />
+    <NYPD v-for="(crime) in arrests" :key="crime.ofns_desc" :arrests="crime" />
   </div>
 </template>
 

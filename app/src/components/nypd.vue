@@ -13,10 +13,6 @@ const props = defineProps({
     type: Object,
     required: true,
   },
-  id: {
-    type: Object,
-    required: true,
-  },
 })
 </script>
 
