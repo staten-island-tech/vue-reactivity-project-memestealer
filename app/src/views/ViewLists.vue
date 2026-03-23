@@ -20,18 +20,13 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const arrests = ref([])
 
-// Computed property to prepare data for the chart
 const chartData = computed(() => {
   if (arrests.value.length === 0) return { labels: [], datasets: [] }
-
-  // 1. Count occurrences of each offense description
   const counts = {}
   arrests.value.forEach(item => {
     const offense = item.ofns_desc || "UNKNOWN"
     counts[offense] = (counts[offense] || 0) + 1
   })
-
-  // 2. Sort and get top 5 results
   const sortedLabels = Object.keys(counts)
     .sort((a, b) => counts[b] - counts[a])
     .slice(0, 5)
