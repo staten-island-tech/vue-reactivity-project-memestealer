@@ -2,9 +2,8 @@
   <div class="card">
     <h2>{{ arrests.ofns_desc }}</h2>
     <h3>{{ arrests.pd_desc }}</h3>
-    <p>race: {{ arrests.perp_race }}</p>
-    <p>gender: {{ arrests.perp_sex }}</p>
-    <p>age:{{ arrests.age_group }}</p>
+    <p>{{ arrests.perp_race }}</p>
+    <p>{{ arrests.perp_sex }}</p>
   </div>
 </template>
 
