@@ -1,7 +1,5 @@
 <template>
   <div>
-    <RouterLink to="/nypd"> nypd </RouterLink>
-
     <RouterView />
   </div>
 </template>

@@ -5,12 +5,12 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/banner',
       name: 'home',
       component: Banner,
     },
     {
-     path: '/nypd',
+     path: '/',
     name: 'nypd',
     component: VueLists,
     },

@@ -40,6 +40,7 @@
     </div>
   </div>
 </template>
+</template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
@@ -57,6 +58,7 @@ import {
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, ArcElement)
 
+const arrests = ref([])
 const currentChart = ref('boro')
 
 const boroData = computed(() => {
